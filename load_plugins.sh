@@ -1,6 +1,5 @@
 if [ $# -eq 1 ]; then
     if [ -d $1 ]; then
-        git clone git://github.com/tpope/vim-bundler.git vim-bundler
         git clone git://github.com/vim-scripts/Align.git $1/Align
         git clone https://github.com/Rykka/colorv.vim.git $1/colorv
         git clone https://github.com/kien/ctrlp.vim.git $1/ctrlp
