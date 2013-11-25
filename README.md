@@ -9,7 +9,7 @@ my vim config and preferred plugins
 3. run the load_plugins script to download the preferred plugins
 
 ```
-load_plugins.sh <vim bundle folder>
+ruby load_plugins.rb [options]
 ```
 
 ## other requirements
