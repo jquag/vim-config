@@ -7,7 +7,7 @@ set sw=4
 set hls
 set number
 set guioptions+=b
-colorscheme my_lingodirector
+colorscheme desert
 set fo=tcqnr
 set com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-,f:*
 filetype plugin indent on
@@ -34,6 +34,8 @@ endif
 
 " load plugins
 execute pathogen#infect()
+
+au BufRead,BufNewFile *.journal		setfiletype journal
 
 " PLUGIN CUSTOMIZATION --------------------------------------------------
 
