@@ -7,7 +7,7 @@ set sw=4
 set hls
 set number
 set guioptions+=b
-colorscheme my_desert
+colorscheme my_slate
 set fo=tcqnr
 set com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-,f:*
 filetype plugin indent on
@@ -52,6 +52,10 @@ let g:SuperTabLongestEnhanced = '1'
 let g:SuperTabLongestHighlight = '1'
 
 "MAPPINGS AND COMMANDS --------------------------------------------------
+
+"trial
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 
 "folding
 nnoremap zz zfip
