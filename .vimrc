@@ -7,7 +7,7 @@ set sw=4
 set hls
 set number
 set guioptions+=b
-colorscheme desert
+colorscheme my_desert
 set fo=tcqnr
 set com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-,f:*
 filetype plugin indent on
@@ -150,7 +150,7 @@ endfunction
 command! Rschema execute "botright 50vs db/schema.rb" | setlocal nowrap
 
 " grepping (aka find in files)
-command! -nargs=1 FF grep -r --exclude=*.swp --exclude=*.svn-base <args> *
+command! -nargs=1 FF grep -r --exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags <args> *
 nmap <f5> :grep -r --exclude=*.swp --exclude=*.svn-base --exclude=tags <cword> *<CR>
 imap <f5> <esc>:grep -r --exclude=*.swp --exclude=*.svn-base --exclude=tags <cword> *<CR>
 vmap <f5> <esc>:grep -r --exclude=*.swp --exclude=*.svn-base --exclude=tags <cword> *<CR>
