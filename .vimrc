@@ -27,6 +27,9 @@ if has("win32")
     vnoremap <Right> l
     vnoremap <Up> k
     vnoremap <Down> j
+
+    nmap <c-a> ggVG
+    imap <c-a> <esc>ggVG
 else
     let &showbreak='↳ '
     set guifont=Monaco:h13
@@ -52,6 +55,9 @@ let g:SuperTabLongestEnhanced = '1'
 let g:SuperTabLongestHighlight = '1'
 
 "MAPPINGS AND COMMANDS --------------------------------------------------
+
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
 
 "trial
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -154,7 +160,7 @@ endfunction
 command! Rschema execute "botright 50vs db/schema.rb" | setlocal nowrap
 
 " grepping (aka find in files)
-command! -nargs=1 FF grep -r --exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags <args> *
+command! -nargs=1 FF execute "grep -r --exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log <args> *"
 nmap <f5> :grep -r --exclude=*.swp --exclude=*.svn-base --exclude=tags <cword> *<CR>
 imap <f5> <esc>:grep -r --exclude=*.swp --exclude=*.svn-base --exclude=tags <cword> *<CR>
 vmap <f5> <esc>:grep -r --exclude=*.swp --exclude=*.svn-base --exclude=tags <cword> *<CR>
@@ -171,6 +177,14 @@ function! DoXmlFormat()
     setlocal nowrap
     execute 'normal ggzR'
 endfunction
+
+" timestamping
+noremap <c-t><c-a> :TimeStampAppend <CR>
+noremap <c-t><c-i> :TimeStampInsert <CR>
+command! TimeStampAppend execute "normal a [" . eval("strftime(\"%Y-%m-%d %H:%M:%S\")") . "]\<esc>"
+command! TimeStampInsert execute "normal i[" . eval("strftime(\"%Y-%m-%d %H:%M:%S\")") . "] \<esc>"
+command! Itoday execute "normal i" . eval("strftime(\"%Y-%m-%d\")") . " \<esc>"
+command! Atoday execute "normal a " . eval("strftime(\"%Y-%m-%d\")") . "\<esc>"
 
 
 " AUTO COMMANDS --------------------------------------------------
