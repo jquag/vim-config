@@ -7,7 +7,7 @@ set sw=4
 set hls
 set number
 set guioptions+=b
-colorscheme my_slate
+colorscheme neon
 set fo=tcqnr
 set com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-,f:*
 filetype plugin indent on
@@ -30,6 +30,7 @@ if has("win32")
 
     nmap <c-a> ggVG
     imap <c-a> <esc>ggVG
+    set selection=inclusive
 else
     let &showbreak='↳ '
     set guifont=Monaco:h13
