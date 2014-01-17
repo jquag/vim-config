@@ -7,7 +7,7 @@ set sw=4
 set hls
 set number
 set guioptions+=b
-colorscheme neon
+colorscheme wombat
 set fo=tcqnr
 set com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-,f:*
 filetype plugin indent on
