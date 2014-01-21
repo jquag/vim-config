@@ -15,6 +15,7 @@ set wildchar=<Tab> wildmenu wildmode=full
 syntax on
 set selection=inclusive
 
+
 if has("win32")
     source $VIMRUNTIME/mswin.vim
     behave mswin
@@ -63,6 +64,8 @@ imap <MiddleMouse> <Nop>
 "trial
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+
+nmap <leader>+ :set lines=999 columns=999<CR>
 
 "folding
 nnoremap zz zfip
