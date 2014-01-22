@@ -164,7 +164,7 @@ endfunction
 command! Rschema execute "botright 50vs db/schema.rb" | setlocal nowrap
 
 " grepping (aka find in files)
-command! -nargs=1 FF execute "grep -r --exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log <args> *"
+command! -nargs=1 FF execute 'grep -rnI --exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log <args> *'
 nmap <f5> :grep -r --exclude=*.swp --exclude=*.svn-base --exclude=tags <cword> *<CR>
 imap <f5> <esc>:grep -r --exclude=*.swp --exclude=*.svn-base --exclude=tags <cword> *<CR>
 vmap <f5> <esc>:grep -r --exclude=*.swp --exclude=*.svn-base --exclude=tags <cword> *<CR>
