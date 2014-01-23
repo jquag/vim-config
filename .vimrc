@@ -167,11 +167,10 @@ command! Rschema execute "botright 50vs db/schema.rb" | setlocal nowrap
 let s:grepExcludes = "--exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log"
 command! -nargs=1 FindInFiles call FindInFilesFunc('<args>')
 nmap <c-h> :FindInFiles "<c-r><c-w>"
-imap <c-h> :FindInFiles <c-r><c-w>
-vmap <c-h> :FindInFiles expand('<cword>')
+imap <c-h> <esc>:FindInFiles "<c-r><c-w>"
 
 function! FindInFilesFunc(term)
-    execute "silent grep! -r ". s:grepExcludes . " " . a:term . " *"
+    execute 'silent grep! -r '. s:grepExcludes . ' ' . a:term . ' *'
     cw
 endfunction
 
