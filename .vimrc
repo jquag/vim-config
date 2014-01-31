@@ -165,14 +165,16 @@ command! Rschema execute "botright 50vs db/schema.rb" | setlocal nowrap
 
 " find in files
 let s:grepExcludes = "--exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log"
-command! -nargs=1 FindInFiles call FindInFilesFunc('<args>')
+command! -nargs=1 FindInFiles call FindInFilesFunc(<args>)
 nmap <c-h> :FindInFiles "<c-r><c-w>"
 imap <c-h> <esc>:FindInFiles "<c-r><c-w>"
 
 function! FindInFilesFunc(term)
-    execute 'silent grep! -r '. s:grepExcludes . ' ' . a:term . ' *'
+    execute 'silent grep! -r '. s:grepExcludes . ' "' . a:term . '" *'
     cw
 endfunction
+
+command! Todos call FindInFilesFunc("TODO JQ")
 
 " format XML (need xmllint.exe on path)
 :command! XmlFormat call DoXmlFormat()
