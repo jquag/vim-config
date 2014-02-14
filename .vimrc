@@ -58,6 +58,24 @@ let g:SuperTabLongestHighlight = '1'
 
 "MAPPINGS AND COMMANDS --------------------------------------------------
 
+
+"tags
+"TODO make this stuff work on Windows too
+set tags=tags,\.tags,\.go-tags
+
+command! Tags call CreateTags()
+function! CreateTags()
+    !ctags -Rf .tags .
+endfunction
+
+command! GoTags call CreateGoTags()
+function! CreateGoTags()
+    call CreateTags()
+    "tag standard library and imported sources
+    !ctags -Rf .go-tags --languages=go --exclude=`pwd` /usr/local/go/src/pkg ~/go/src
+endfunction
+
+
 map <MiddleMouse> <Nop>
 imap <MiddleMouse> <Nop>
 
