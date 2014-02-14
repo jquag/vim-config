@@ -183,12 +183,19 @@ command! Rschema execute "botright 50vs db/schema.rb" | setlocal nowrap
 
 " find in files
 let s:grepExcludes = "--exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log"
-command! -nargs=1 FindInFiles call FindInFilesFunc(<args>)
-nmap <c-h> :FindInFiles "<c-r><c-w>"
-imap <c-h> <esc>:FindInFiles "<c-r><c-w>"
+command! -nargs=1 Grepr call FindInFilesFunc(<f-args>)
+nmap <c-h> :Grepr <c-r><c-w>
+imap <c-h> <esc>:Grepr <c-r><c-w>
 
 function! FindInFilesFunc(term)
-    execute 'silent grep! -r '. s:grepExcludes . ' "' . a:term . '" *'
+    let filename = expand('%:t')
+    let defaultPattern = "*." . strpart(filename, matchend(filename, '.*\.'))
+    let includePattern = input('--include=? ', defaultPattern)
+    if includePattern == ''
+        let includePattern = '*'
+    endif
+
+    execute 'grep! -rn --binary-files=without-match '. s:grepExcludes . ' "' . a:term . '" --include=' . includePattern . ' *'
     cw
 endfunction
 

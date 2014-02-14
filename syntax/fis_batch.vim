@@ -380,5 +380,43 @@ hi link nameUpdateCardRecordStatusCode NonText
 syntax region nameUpdateProcessingMessage start=/^51.\{2}.\{50}.\{1}.\{50}.\{3}.\{9}.\{50}.\{1}.\{50}.\{3}.\{9}.\{26}.\{19}.\{82}.\{2}.\{41}/hs=e-40 end=/.*/he=s-1 contains=ALL
 hi link nameUpdateProcessingMessage IncSearch
 
+"CardCreationRecord
+syntax region cardCreationType start=/^71/hs=e-1 end=/.*/he=s-1 contains=ALL
+hi link cardCreationType Identifier
+syntax region cardCreationActionType start=/^71.\{2}/hs=e-1 end=/.*/he=s-1 contains=ALL
+hi link cardCreationActionType NonText
+syntax region cardCreationUserId start=/^71.\{2}.\{15}/hs=e-14 end=/.*/he=s-1 contains=ALL
+hi link cardCreationUserId IncSearch
+syntax region cardCreationNumberCards start=/^71.\{2}.\{15}.\{7}/hs=e-6 end=/.*/he=s-1 contains=ALL
+hi link cardCreationNumberCards NonText
+syntax region cardCreationDeliveryMethod start=/^71.\{2}.\{15}.\{7}.\{2}/hs=e-1 end=/.*/he=s-1 contains=ALL
+hi link cardCreationDeliveryMethod IncSearch
+syntax region cardCreationThirdLine start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}/hs=e-25 end=/.*/he=s-1 contains=ALL
+hi link cardCreationThirdLine NonText
+syntax region cardCreationFourthLine start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}/hs=e-25 end=/.*/he=s-1 contains=ALL
+hi link cardCreationFourthLine IncSearch
+syntax region cardCreationMagName start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}/hs=e-25 end=/.*/he=s-1 contains=ALL
+hi link cardCreationMagName NonText
+syntax region cardCreationPhoneNumber start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}/hs=e-22 end=/.*/he=s-1 contains=ALL
+hi link cardCreationPhoneNumber IncSearch
+syntax region cardCreationPurseCreation start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}.\{1}/hs=e end=/.*/he=s-1 contains=ALL
+hi link cardCreationPurseCreation NonText
+syntax region cardCreationPurseNumber start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}.\{1}.\{6}/hs=e-5 end=/.*/he=s-1 contains=ALL
+hi link cardCreationPurseNumber IncSearch
+syntax region cardCreationAmount start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}.\{1}.\{6}.\{10}/hs=e-9 end=/.*/he=s-1 contains=ALL
+hi link cardCreationAmount NonText
+syntax region cardCreationEmbossAmountInd start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}.\{1}.\{6}.\{10}.\{1}/hs=e end=/.*/he=s-1 contains=ALL
+hi link cardCreationEmbossAmountInd IncSearch
+syntax region cardCreationComment start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}.\{1}.\{6}.\{10}.\{1}.\{128}/hs=e-127 end=/.*/he=s-1 contains=ALL
+hi link cardCreationComment NonText
+syntax region cardCreationApplyDate start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}.\{1}.\{6}.\{10}.\{1}.\{128}.\{8}/hs=e-7 end=/.*/he=s-1 contains=ALL
+hi link cardCreationApplyDate IncSearch
+syntax region cardCreationFiller start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}.\{1}.\{6}.\{10}.\{1}.\{128}.\{8}.\{74}/hs=e-73 end=/.*/he=s-1 contains=ALL
+hi link cardCreationFiller NonText
+syntax region cardCreationCardRecordStatus start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}.\{1}.\{6}.\{10}.\{1}.\{128}.\{8}.\{74}.\{2}/hs=e-1 end=/.*/he=s-1 contains=ALL
+hi link cardCreationCardRecordStatus IncSearch
+syntax region cardCreationProcessingMessage start=/^71.\{2}.\{15}.\{7}.\{2}.\{26}.\{26}.\{26}.\{23}.\{1}.\{6}.\{10}.\{1}.\{128}.\{8}.\{74}.\{2}.\{41}/hs=e-40 end=/.*/he=s-1 contains=ALL
+hi link cardCreationProcessingMessage NonText
+
 "TODO 71, 72, 73
 "TODO make a shortcut to show the field name

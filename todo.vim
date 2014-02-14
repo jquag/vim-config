@@ -1,6 +1,6 @@
 set syntax=todo
 
-command! -buffer Newday execute "normal gg" | execute "\/= DID =" | execute "normal o\<CR>" . eval("strftime(\"%Y-%m-%d\")") . "\<ESC>\<leader>u" | set nohls
+command! -buffer Newday execute "normal gg" | execute "\/= DID =" | execute "normal o\<CR>" . eval("strftime(\"%Y-%m-%d\")") . "\<ESC>\<leader>u" | set nohls | set syntax=todo
 nmap <buffer> <leader>new :Newday<CR>
 nmap <buffer> <leader>news :Newday<CR><ESC>kk<leader>pjj
 
