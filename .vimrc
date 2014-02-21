@@ -210,4 +210,3 @@ command! Atoday execute "normal a " . eval("strftime(\"%Y-%m-%d\")") . "\<esc>"
 " todo file
 " TODO use the correct vimfiles or .vim
 au BufReadPost todo.txt so ~/vimfiles/todo.vim
-
