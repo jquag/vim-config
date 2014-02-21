@@ -15,6 +15,12 @@ set wildchar=<Tab> wildmenu wildmode=full
 syntax on
 set selection=inclusive
 
+" use vim plugins bundled with GO
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
 
 if has("win32")
     source $VIMRUNTIME/mswin.vim
