@@ -10,10 +10,15 @@ command! Spec call RunSpec(@%)
 function! RunSpec(file)
     cexpr system("jruby bin/rake spec " . a:file) | copen
 endfunction
- "| call search('application_controller')
-command! Analyze call RunAnalyze()
-function! RunAnalyze()
-  let l:term = substitute(@%, '\', '\\\\', 'g')
-  cgetexpr system("jruby bin/rails_best_practices --without-color --silent .") | copen
-  call search(l:term)
+
+command! Analyze call RunAnalyze(@%)
+command! AnalyzeAll call RunAnalyze('')
+function! RunAnalyze(file)
+  let l:term = substitute(a:file, '\', '/', 'g')
+  let l:exp = 'jruby bin/rails_best_practices --without-color --silent .'
+  if a:file != ''
+      let l:exp = l:exp . ' | grep "' . l:term . '"'
+  endif
+  cgetexpr system(l:exp) | copen
 endfunction
+
