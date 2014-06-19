@@ -1,4 +1,5 @@
 let b:current_syntax="text"
+syntax sync linebreaks=3
 
 syntax sync fromstart
 "syntax sync linebreaks=3
@@ -60,6 +61,12 @@ let cur_syntax = b:current_syntax
 unlet! b:current_syntax
 syntax include @JAVA syntax/java.vim
 syntax region txtJavaSnip matchgroup=txtSnip start="```java" end="```" contains=@JAVA
+let b:current_syntax = cur_syntax
+
+let cur_syntax = b:current_syntax
+unlet! b:current_syntax
+syntax include @XML syntax/xml.vim
+syntax region txtXmlSnip matchgroup=txtSnip start="```xml" end="```" contains=@XML
 let b:current_syntax = cur_syntax
 
 hi link txtSnip NonText

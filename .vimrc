@@ -228,6 +228,30 @@ command! TimeStampInsert execute "normal i[" . eval("strftime(\"%Y-%m-%d %H:%M:%
 command! Itoday execute "normal i" . eval("strftime(\"%Y-%m-%d\")") . " \<esc>"
 command! Atoday execute "normal a " . eval("strftime(\"%Y-%m-%d\")") . "\<esc>"
 
+command! -range Equals echo EqualsFunc(<line1>, <line2>)
+function! EqualsFunc(l1, l2)
+    let equation = ""
+    let lnum = a:l1
+    while lnum <= a:l2
+        let equation = equation . getline(lnum)
+        let lnum += 1
+    endwhile
+    return eval(equation)
+endfunction
+
+" Sum up the numbers in a selection----
+:command! -range Sum echo SumFunc(<line1>, <line2>)
+
+function! SumFunc(l1, l2)
+    let sum = 0
+    let lnum = a:l1
+    while lnum <= a:l2
+        let sum = sum + str2float(getline(lnum))
+        let lnum = lnum + 1
+    endwhile
+    return sum
+endfunction
+" end of summing----------------------
 
 " AUTO COMMANDS --------------------------------------------------
 
