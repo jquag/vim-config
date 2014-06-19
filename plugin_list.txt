@@ -19,3 +19,4 @@ git://github.com/tpope/vim-speeddating.git
 git://github.com/tpope/vim-surround.git
 https://github.com/majutsushi/tagbar.git
 https://github.com/jquag/subvirm.git
+https://github.com/elzr/vim-json.git

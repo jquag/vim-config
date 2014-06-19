@@ -2,8 +2,8 @@
 set autoindent
 set showcmd
 set expandtab
-set ts=4
-set sw=4
+set ts=2
+set sw=2
 set hls
 set number
 set guioptions+=b
