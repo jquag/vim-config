@@ -45,6 +45,7 @@ endif
 
 " load plugins
 execute pathogen#infect()
+syntax on
 
 au BufRead,BufNewFile *.journal		setfiletype journal
 
@@ -61,6 +62,9 @@ let g:SuperTabCrMapping = '0'
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabLongestEnhanced = '1'
 let g:SuperTabLongestHighlight = '1'
+
+" colorv options
+let g:colorv_preview_ftype = 'css,html,javascript,stylus'
 
 "MAPPINGS AND COMMANDS --------------------------------------------------
 
@@ -256,5 +260,6 @@ endfunction
 " AUTO COMMANDS --------------------------------------------------
 
 " todo file
-" TODO use the correct vimfiles or .vim
-au BufReadPost todo.txt so ~/vimfiles/todo.vim
+if filereadable("~/vimfiles.todo.vim")
+  au BufReadPost todo.txt so ~/vimfiles/todo.vim
+endif

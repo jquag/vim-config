@@ -3,7 +3,9 @@ require 'optparse'
 def load_plugins(options)
     File.open(options[:plugin_file]).each do |line|
         name = line[/.*\/(.*)\.git/, 1].gsub('.', '-')
-        `git clone #{line.chomp} #{options[:directory]}/#{name}`
+        unless File.exists? File.join(options[:directory], name)
+          `git clone #{line.chomp} #{options[:directory]}/#{name}`
+        end
     end
 end
 
