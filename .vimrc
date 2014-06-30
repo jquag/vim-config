@@ -2,8 +2,8 @@
 set autoindent
 set showcmd
 set expandtab
-set ts=4
-set sw=4
+set ts=2
+set sw=2
 set hls
 set number
 set guioptions+=b
@@ -45,6 +45,7 @@ endif
 
 " load plugins
 execute pathogen#infect()
+syntax on
 
 " PLUGIN CUSTOMIZATION --------------------------------------------------
 
@@ -59,6 +60,9 @@ let g:SuperTabCrMapping = '0'
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabLongestEnhanced = '1'
 let g:SuperTabLongestHighlight = '1'
+
+" colorv options
+let g:colorv_preview_ftype = 'css,html,javascript,stylus'
 
 "MAPPINGS AND COMMANDS --------------------------------------------------
 
@@ -255,5 +259,6 @@ endfunction
 " AUTO COMMANDS --------------------------------------------------
 
 " todo file
-" TODO use the correct vimfiles or .vim
-au BufReadPost todo.txt so ~/vimfiles/todo.vim
+if filereadable("~/vimfiles.todo.vim")
+  au BufReadPost todo.txt so ~/vimfiles/todo.vim
+endif
