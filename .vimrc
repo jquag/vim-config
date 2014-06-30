@@ -46,8 +46,6 @@ endif
 " load plugins
 execute pathogen#infect()
 
-au BufRead,BufNewFile *.journal		setfiletype journal
-
 " PLUGIN CUSTOMIZATION --------------------------------------------------
 
 "vim-multicursor
@@ -64,6 +62,7 @@ let g:SuperTabLongestHighlight = '1'
 
 "MAPPINGS AND COMMANDS --------------------------------------------------
 
+nmap <f4> :e<CR>
 
 "tags
 "TODO make this stuff work on Windows too
@@ -142,7 +141,7 @@ nnoremap <leader>\U yyp<c-v>$r=
 :command! DelBlanks %s/^\n//g
 
 " set syntax for FIS batch file
-:command! Fis set nowrap | set syntax=fis_batch
+:command! Fis set nowrap | set syntax=fis_batch | colorscheme desert | set lines=999 columns=999
 
 " format current delim file as a table
 command! Rtable execute "normal ggVG" | execute "'<,'>Align |"

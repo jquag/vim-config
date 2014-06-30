@@ -1,9 +1,11 @@
 set shiftwidth=2
+set tabstop=2
 set errorformat+=%m[%f:%l]:,%f:%l\ -\ %m
 
 command! Test call RunTest(@%)
 function! RunTest(file)
-    cexpr system("jruby bin/rake test -v " . a:file) | copen
+  let l:term = substitute(a:file, '\', '\\', 'g')
+  cexpr system('jruby bin/rake test -v "' . l:term . '"') | copen
 endfunction
 
 command! Spec call RunSpec(@%)
