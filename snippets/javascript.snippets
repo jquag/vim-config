@@ -6,3 +6,11 @@ snippet todo
 	//TODO JQ: ${0:implement}
 snippet clog
 	console.log(${0});
+snippet req
+	var ${2} = require('${1}');
+#Immediate function with strict
+snippet (fs
+	(function (${1}) {
+		'use strict';
+		${0}
+	}(${2}));
