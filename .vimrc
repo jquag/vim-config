@@ -25,7 +25,7 @@ syntax on
 if has("win32")
     source $VIMRUNTIME/mswin.vim
     behave mswin
-    set guifont=Consolas:h11:cANSI
+    set guifont=Consolas:h12:cANSI
     set grepprg=grep
     set showbreak=...    
 
@@ -194,7 +194,7 @@ command! Rschema execute "botright 50vs db/schema.rb" | setlocal nowrap
 let s:grepExcludes = "--exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log"
 command! -nargs=1 Grepr call FindInFilesFunc(<f-args>)
 nmap <c-h> :Grepr <c-r><c-w>
-imap <c-h> <esc>:Grepr <c-r><c-w>
+"imap <c-h> <esc>:Grepr <c-r><c-w>
 
 function! FindInFilesFunc(term)
     let filename = expand('%:t')
