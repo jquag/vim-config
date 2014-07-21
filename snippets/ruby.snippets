@@ -8,3 +8,14 @@ snippet pry
 	binding.pry #TODO JQ do not commit
 snippet rpry
 	require 'pry'; binding.pry #TODO JQ do not commit
+snippet noimp
+	raise 'not yet implemented'
+	#TODO JQ: ${0:implement}
+snippet ae
+	assert_equal(${1:expected}, ${2:actual})
+snippet an
+	assert_nil(${0:nil})
+snippet test
+	test '${1}' do
+		${0}
+	end
