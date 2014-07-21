@@ -56,6 +56,7 @@ let g:multicursor_quit = "<c-0>"
 
 "ctrlp
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
 
 " supertab
 let g:SuperTabCrMapping = '0'
