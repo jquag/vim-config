@@ -8,6 +8,12 @@ function! RunTest(file)
   cexpr system('jruby bin/rake test -v "' . l:term . '"') | copen
 endfunction
 
+command! Testm call RunTestManual(@%)
+function! RunTestManual(file)
+  let @* = 'jruby bin\rake test -v "' . substitute(a:file, '\', '\\', 'g') . '"'
+  sh
+endfunction
+
 command! Spec call RunSpec(@%)
 function! RunSpec(file)
     cexpr system("jruby bin/rake spec " . a:file) | copen
@@ -23,4 +29,3 @@ function! RunAnalyze(file)
   endif
   cgetexpr system(l:exp) | copen
 endfunction
-

@@ -7,7 +7,7 @@ set sw=2
 set hls
 set number
 set guioptions+=b
-colorscheme wombat
+colorscheme desert
 set fo=tcqnr
 set com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-,f:*
 filetype plugin indent on
@@ -54,7 +54,7 @@ let g:multicursor_quit = "<c-0>"
 
 "ctrlp
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
+let g:ctrlp_custom_ignore = '\v[\/]node_modules$\|\v[\/]\?coverage$'
 
 " supertab
 let g:SuperTabCrMapping = '0'
@@ -192,7 +192,7 @@ endfunction
 command! Rschema execute "botright 50vs db/schema.rb" | setlocal nowrap
 
 " find in files
-let s:grepExcludes = "--exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log"
+let s:grepExcludes = "--exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log --exclude=coverage"
 command! -nargs=1 Grepr call FindInFilesFunc(<f-args>)
 nmap <c-h> :Grepr <c-r><c-w>
 "imap <c-h> <esc>:Grepr <c-r><c-w>
@@ -260,6 +260,6 @@ endfunction
 " AUTO COMMANDS --------------------------------------------------
 
 " todo file
-if filereadable("~/vimfiles.todo.vim")
+if filereadable("~/vimfiles/todo.vim")
   au BufReadPost todo.txt so ~/vimfiles/todo.vim
 endif
