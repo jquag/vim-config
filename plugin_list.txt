@@ -23,4 +23,4 @@ https://github.com/elzr/vim-json.git
 https://github.com/sunaku/vim-ruby-minitest.git
 git://github.com/digitaltoad/vim-jade.git
 git://github.com/wavded/vim-stylus.git
-https://github.com/vim-scripts/dbext.vim.git
+https://github.com/marijnh/tern_for_vim.git
