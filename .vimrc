@@ -192,7 +192,7 @@ endfunction
 command! Rschema execute "botright 50vs db/schema.rb" | setlocal nowrap
 
 " find in files
-let s:grepExcludes = "--exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log"
+let s:grepExcludes = "--exclude=*.swp --exclude=*.svn-base --exclude=*.un~ --exclude=tags --exclude=log --exclude=node_modules/* "
 command! -nargs=1 Grepr call FindInFilesFunc(<f-args>)
 nmap <c-h> :Grepr <c-r><c-w>
 "imap <c-h> <esc>:Grepr <c-r><c-w>

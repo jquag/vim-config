@@ -23,3 +23,5 @@ https://github.com/elzr/vim-json.git
 https://github.com/sunaku/vim-ruby-minitest.git
 git://github.com/digitaltoad/vim-jade.git
 git://github.com/wavded/vim-stylus.git
+https://github.com/moll/vim-node.git
+https://github.com/leafgarland/typescript-vim.git

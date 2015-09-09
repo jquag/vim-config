@@ -7,10 +7,15 @@ snippet todo
 snippet clog
 	console.log(${0});
 snippet req
-	var ${2} = require('${1}');
+	var ${2:$1} = require('${1:}');
 #Immediate function with strict
 snippet (fs
 	(function (${1}) {
 		'use strict';
 		${0}
 	}(${2}));
+snippet noimp
+	//TODO JQ: implement
+	throw new Error('Not implemented yet');
+snippet log
+	console.log(${0});
