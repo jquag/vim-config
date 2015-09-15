@@ -10,7 +10,6 @@ https://github.com/scrooloose/nerdcommenter.git
 https://github.com/scrooloose/nerdtree.git
 https://github.com/ervandew/supertab.git
 git://github.com/tpope/vim-fugitive.git
-https://github.com/Blackrush/vim-gocode.git
 https://github.com/terryma/vim-multiple-cursors.git
 git://github.com/tpope/vim-rails.git
 git://github.com/tpope/vim-repeat.git
@@ -26,3 +25,4 @@ git://github.com/wavded/vim-stylus.git
 https://github.com/moll/vim-node.git
 https://github.com/leafgarland/typescript-vim.git
 https://github.com/marijnh/tern_for_vim.git
+https://github.com/fatih/vim-go.git

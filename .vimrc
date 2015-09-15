@@ -15,6 +15,9 @@ set wildchar=<Tab> wildmenu wildmode=full
 syntax on
 set selection=inclusive
 
+" abbreviations
+:iabbrev </ </<C-X><C-O>
+
 " use vim plugins bundled with GO
 filetype off
 filetype plugin indent off
